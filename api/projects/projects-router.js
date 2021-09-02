@@ -7,9 +7,9 @@ const {
 const router = express.Router()
 
 router.get('/', (req, res, next) => {
-  Project.get(req.query)
+  Project.get()
     .then(projects => {
-      res.json(projects)
+      res.status(200).json(projects)
     })
     .catch(next)
 })

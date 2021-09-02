@@ -1,6 +1,6 @@
 const express = require('express')
 const { logger } = require('./middleware/middleware')
-const projectsRouter = require('../api/projects/projects-router')
+const projectsRouter = require('./projects/projects-router')
 
 const server = express()
 
