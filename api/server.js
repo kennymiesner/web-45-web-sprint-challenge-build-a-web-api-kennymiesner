@@ -1,9 +1,17 @@
-const express = require('express');
-const server = express();
+const express = require('express')
+const { logger } = require('./middleware/middleware')
+const projectsRouter = require('../api/projects/projects-router')
 
-// Configure your server here
-// Build your actions router in /api/actions/actions-router.js
-// Build your projects router in /api/projects/projects-router.js
-// Do NOT `server.listen()` inside this file!
+const server = express()
 
-module.exports = server;
+server.use(express.json())
+
+server.use(logger)
+
+server.use('/api/projects', projectsRouter)
+
+server.use('*', (req, res) => {
+  res.send(`<h1>web-45-web-sprint-challenge-build-a-web-api-kennymiesner is up and running</h1>`)
+})
+
+module.exports = server
