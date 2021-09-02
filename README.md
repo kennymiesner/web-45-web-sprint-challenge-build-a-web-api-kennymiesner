@@ -137,17 +137,44 @@ We have provided test data for all the resources.
 
 ## Submission format
 
-- [ ] Submit via Codegrade by pushing commits to your `<firstName-lastName>` branch.
-- [ ] Check Codegrade before the deadline to compare its results against your local tests.
-- [ ] Check Codegrade on the days following the Sprint Challenge for reviewer feedback.
-- [ ] New commits will be evaluated by Codegrade if pushed _before_ the sprint challenge deadline.
+- [x] Submit via Codegrade by pushing commits to your `<firstName-lastName>` branch.
+- [x] Check Codegrade before the deadline to compare its results against your local tests.
+- [x] Check Codegrade on the days following the Sprint Challenge for reviewer feedback.
+- [x] New commits will be evaluated by Codegrade if pushed _before_ the sprint challenge deadline.
 
 ## Interview Questions
 
 Be prepared to demonstrate your understanding of this week's concepts by answering questions on the following topics. You might prepare by writing down your own answers before hand.
 
 1. The core features of Node.js and Express and why they are useful.
+
+Some key features of Node.js:
+- Asynchronous and Event Driven: All APIs of Node.js library are non-blocking, or the server never waits for an API to return data. 
+- Very Fast: Self-explanatory.
+- Single-threaded: Removes the complexity involved in handling multiple threads.
+- NPM Repository Access: Gives us access to the largest ecosystem of useful libraries in npm modules.
+
+Some key features of Express:
+- Middleware: Adds middleware functions that can get the request and response objects, operate on them, and trigger some function.
+- Routing: Adds a way to select which request handler function is executed.
+- Convenience Helpers: Adds helpers that provide out of the box functionality to make writing web apps and API servers easier.
+
 1. Understand and explain the use of Middleware.
+
+Middleware functions can get the request and response objects, operate on them, and (when specified) trigger some action. Examples are logging or security. Express's middleware stack is an array of functions. Middleware can change the request or response, but it doesn't have to.
+
 1. The basic principles of the REST architectural style.
+
+- Everything is a resource.
+- Each resource is accessible via a unique URI.
+- Resources can have multiple representations.
+- Communication happens over a stateless protocol (HTTP).
+- Resource management happens via HTTP methods.
+
 1. Understand and explain the use of Express Routers.
+
+Express Routers are helpful in separating concerns, such as different endpoints and keep relevant portions of the source code together. They help in building maintainable code.
+
 1. Describe tooling used to manually test the correctness of an API.
+
+I'm not quite sure what this is referring to. You can use things like POSTMAN or HTTPPIE to manually make API requests and view the response.
