@@ -46,6 +46,14 @@ router.delete('/:id', validateProjectId, (req, res, next) => {
     .catch(next)
 })
 
+router.get('/:id/actions', validateProjectId, (req, res, next) => {
+  Project.getProjectActions(req.params.id)
+    .then(actions => {
+      res.status(200).json(actions)
+    })
+    .catch(next)
+})
+
 router.use((err, req, res, next) => { // eslint-disable-line
   res.status(err.status || 500).json({
     customMessage: 'projects router error',
