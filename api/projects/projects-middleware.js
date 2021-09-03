@@ -19,10 +19,11 @@ async function validateProjectId(req, res, next) {
 }
 
 function validateProject(req, res, next) {
-  const { name, description } = req.body
+  const { name, description, completed } = req.body
   if (
     !name || !name.trim() ||
-    !description || !description.trim()
+    !description || !description.trim() ||
+    completed === undefined
   ) {
     res.status(400).json({
       message: 'Please include all required name, description, or completed fields' })
