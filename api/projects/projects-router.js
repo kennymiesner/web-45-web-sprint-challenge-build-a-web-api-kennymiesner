@@ -16,13 +16,32 @@ router.get('/', (req, res, next) => {
 })
 
 router.get('/:id', validateProjectId, (req, res) => {
-  res.json(req.project)
+  res.status(200).json(req.project)
 })
 
 router.post('/', validateProject, (req, res, next) => {
   Project.insert(req.body)
     .then(newProject => {
       res.status(201).json(newProject)
+    })
+    .catch(next)
+})
+
+// router.put('/:id', validateProjectId, (req, res, next) => {
+//   Project.update(req.params.id, req.body)
+//     .then(() => {
+//       return Project.get(req.params.id)
+//     })
+//     .then(project => {
+//       res.status(200).json(project)
+//     })
+//     .catch(next)
+// })
+
+router.delete('/:id', validateProjectId, (req, res, next) => {
+  Project.remove(req.params.id)
+    .then(project => {
+      res.status(204).json(project)
     })
     .catch(next)
 })
