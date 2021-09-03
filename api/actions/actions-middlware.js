@@ -18,6 +18,11 @@ async function validateActionId(req, res, next) {
   }
 }
 
+// function validateAction(req, res, next) {
+//   const {}
+// }
+
 module.exports = {
   validateActionId,
+  // validateAction,
 }

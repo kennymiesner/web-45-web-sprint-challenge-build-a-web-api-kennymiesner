@@ -18,4 +18,19 @@ router.get('/:id', validateActionId, (req, res) => {
   res.status(200).json(req.action)
 })
 
+// router.post('/', validateAction, (req, res, next) => {
+//   .then(newAction => {
+//     res.status(201).json(newAction)
+//   })
+//   .catch(next)
+// })
+
+router.delete('/:id', validateActionId, (req, res, next) => {
+  Action.remove(req.params.id)
+    .then(action => {
+      res.status(204).json(action)
+    })
+    .catch(next)
+})
+
 module.exports = router
